@@ -1,0 +1,61 @@
+{% extends "base.html"%}
+
+{% block head %}
+<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+<meta http-equiv=”refresh” content=”5" name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="{{ url_for('static', filename='css/mainPage.css') }}">
+
+<title>Home Page</title>
+
+{% endblock %}
+
+{% block body%}
+            <form name='myForm' method='POST' action="/home">
+                <!-- Rounded switches -->
+                <div  class="leftSwitch">
+                     <h3>ArpSpoofDetector</h3>
+                     <label class="switch">
+                     {% if Arp == 'on' %}
+                            <input type="checkbox" name='ArpSpoofDetector' checked  onchange="this.form.submit()"/>
+                     {% else %}
+                            <input type="checkbox" name='ArpSpoofDetector' onchange="this.form.submit()"/>
+                     {% endif %}
+                    <span class="slider round"></span>
+                    </label>
+                </div>
+                <div  class="middleSwitch">
+                     <h3>DnsSpoofDetector</h3>
+                     <label class="switch">
+                     {% if Dns =='on' %}
+                            <input  type="checkbox" name='DnsSpoofDetector' checked  onchange="this.form.submit()"/>
+                        {% else %}
+                            <input type="checkbox"  name='DnsSpoofDetector' onchange="this.form.submit()"/>
+                        {% endif %}
+                     <span class="slider round"></span>
+                     </label>
+
+                </div>
+                <div  class="rightSwitch">
+                     <h3>SynFloodDetector</h3>
+                     <label class="switch">
+                     {% if Syn == 'on' %}
+                            <input type="checkbox"  name='SynFloodDetector' checked onchange="this.form.submit()"/>
+                        {% else %}
+                            <input type="checkbox" name='SynFloodDetector' onchange="this.form.submit()" />
+                        {% endif %}
+                     <span class="slider round"></span>
+                     </label>
+                </div>
+            </form>
+            <div class="boxed">
+                <ul>
+                    {% for data in dataToPass %}
+                    <li>{{data}} </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <script src="{{ url_for('static', filename='javascript/custom.js') }}"></script>
+            <script src="{{ url_for('static', filename='javascript/jquery-2.1.0.min.js') }}"></script>
+            <script src="{{ url_for('static', filename='javascript/owl-carousel.js') }}"></script>
+            <script src="{{ url_for('static', filename='javascript/scrollreveal.min.js') }}"></script>
+{% endblock %}

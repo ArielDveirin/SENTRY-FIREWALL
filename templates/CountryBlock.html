@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block head %}
+<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+<meta http-equiv=”refresh” content=”5" name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="{{ url_for('static', filename='css/homeDesign.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/startMenu.css') }}">
+<title>Country blocker Page</title>
+
+
+{% endblock %}
+
+{% block body%}
+<form name='myForm' method='POST' action="/CountryBlock">
+    <div>
+        <h1>Welcome to the country blocker</h1>
+        <h2>Please enter country name you wish to block: </h2>
+        <input name="CountryToBlock" type="text" placeholder="Enter Country name" value="{{Country_name1}}">
+        <p class="feedback">{{Country_feedback1}}</p>
+        <h2>Please enter country name you wish to unblock: </h2>
+        <input name="CountryToUnblock" type="text" placeholder="Enter Country name" value="{{Country_name2}}">
+        <p class="feedback">{{Country_feedback2}}</p>
+        <input type="submit" value="Send">
+    </div>
+{% endblock %}

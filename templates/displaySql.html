@@ -1,0 +1,56 @@
+{% extends "base.html"%}
+
+{% block head %}
+<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+<meta http-equiv=”refresh” content=”5" name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="{{ url_for('static', filename='css/mainPage.css') }}">
+<meta http-equiv="refresh" content="30">                
+
+<title>Display dataBase</title>
+{% endblock %}
+
+
+
+{% block body%}
+</head>
+<body>
+<table>
+<tr>
+  <td>Scan Id</td>
+  {%for id in scanId %}
+  <th>{{id}}</th>
+  {% endfor %}
+  
+  <td>scanDate</td>
+  {%for date in scanDate %}
+  <th>{{date}}</th>
+  {% endfor %} 
+
+  <td>type Of Attack</td>
+  {%for attack in typeOfAttack %}
+  <th>{{attack}}</th>
+  {% endfor %} 
+
+  <td>router Host Name</td>
+  {%for HostName in routerHostName %}
+  <th>{{HostName}}</th>
+  {% endfor %} 
+
+  <td>attacker Mac</td>
+  {%for mac in attackerMac %}
+  <th>{{mac}}</th>
+  {% endfor %} 
+
+  <td>attacker Name</td>
+  {%for Name in attackerName %}
+  <th>{{Name}}</th>
+  {% endfor %} 
+
+</tr>
+
+</table> 
+
+<a href="home">
+    <button>Return To MainPage</button>
+  </a>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block head %}
+<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+<meta http-equiv=”refresh” content=”5" name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="{{ url_for('static', filename='css/mainDesign.css') }}">
+
+<title>Landing Page Page</title>
+
+{% endblock %}
+
+{% block body%}
+<!-- ***** Welcome Area Start ***** -->
+<div class="welcome-area" id="welcome">
+
+    <!-- ***** Header Text Start ***** -->
+    <div class="header-text">
+        <div class="container">
+            <div class="row">
+                <div class="left-text col-lg-6 col-md-12 col-sm-12 col-xs-12"
+                    data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
+                    <h1>Welcome to<em> Sentry</em></h1>
+                       A Project by Ariel Dveirin & Adam Shamis</p> 
+                    <a href="start" class="main-button-slider">GET STARTED</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+        
+</div>
+{% endblock %}

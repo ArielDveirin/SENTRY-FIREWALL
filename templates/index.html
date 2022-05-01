@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Main page</title>
+{% endblock %}
+
+{% block before %}
+<frameset rows = "10%,80%,10%", border = '1'>
+   <frame name = "top" src = "topMenu" />
+   <frame name = "main" src = "home" />
+   <frame name = "bottom" src = "bottomFrame" />
+   
+   <noframes>
+      <body>Your browser does not support frames.</body>
+   </noframes>
+   
+</frameset>
+{% endblock %}
+ 

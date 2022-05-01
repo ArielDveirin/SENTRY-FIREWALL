@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+    <html>
+
+        {% block head %}
+          <link rel="stylesheet" href="LoginPageDesign.css">
+          <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+        
+		<title>About us page</title>
+        <style>
+            h1,h2,h3
+            {
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
+            h1{
+                text-align: center;
+            }
+            h2
+            {
+                font-size: 30px;
+                color: rgb(75, 18, 18);
+            }
+            h3{
+                font-size: 25px;
+            }
+        </style>
+        {% endblock %}
+
+        {% block body%}
+<h1>Wlecome to protections page , here you can learn about the attacks we are offering defend against</h1>
+<h2> Man In The Middle Attack</h2>
+<h3> This attack, as it is called, is an attack in which the attacker manages to place himself between the service seeker (customer) and the service provider 
+    (server, router or other component) and thus can access the information and even change it without the user's knowledge. The most common way to attack this attack is through ARP SPOOFING. 
+    Our software scans the number of ARP RESPONSE facts and verifies the sender's IP address matches the MAC address, we will perform the test using the BROADCAST query of the sender's IP and thus we will perform the verification </h3>
+    <h2> SYN FLOOD Attack</h2>
+    <h3> This attack is actually a DDOS attack that prevents access to sites
+        We can protect against this attack by setting rules in IPTABLES so that it is not observed in SYN requests.</h3> 
+        <h2> DNS spoofing attack </h2>
+        <h3> This attack actually "poisons" the DNS cache and actually pulls a certain IP into the wrong domain. Our system knows how to detect this attack with the help of an algorithm that tests
+            That we did not get more than one answer to a DNS query.
+           </h3> 
+           <h2> Port scanning attack </h2>
+        <h3> This is a method that attackers use to expand their target environment by sending packets to specific host ports and using responses to find vulnerabilities 
+            and understand which services and service versions are running on the attacked computer.
+           </h3> 
+    {% endblock %}
+        </html>
+ 
+</html>

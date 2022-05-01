@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block head %}
+<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+<meta http-equiv=”refresh” content=”5" name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="{{ url_for('static', filename='css/homeDesign.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/chooseInterfaceDesign.css') }}">
+<title>start up Page</title>
+
+{% endblock %}
+
+{% block body%}
+            <form name='myForm' method='POST' action="/start">
+                <div class="main" style="background-image: url('/static/background.jpg')">
+                    
+                    <!--<div class="welcome">
+                        <h1 style="color:#fba70b;">Welcome to Sentry</h1>
+                    </div>-->
+
+                    <div class="please">
+                        <h2 class="enterInfo" style="color:#fba70b;">Please choose an Interface to work on:</h2>
+                    </div>
+
+                    <div class="list">
+
+                        <h3 style="color:#fba70b; font-family: Regular 400 ;">Available interfaces:  {% for data in interfaces %}
+                            <div class="data">
+                                <h4 style="color:#fba70b;">{{data}} </h4>
+                                {% endfor %}</h3>
+                            </div>
+                    </div>
+
+                    <div class="interface">    
+                        <input name="interface" type="text" placeholder="Enter interface" value="{{interface_value}}">
+                        <p class="feedback">{{interface_feedback}}</p>
+                    </div>
+
+                    <div class="button">
+                        <input type="submit" value="Send">
+
+                    </div>
+                </div>
+
+            </form>
+
+{% endblock %}
